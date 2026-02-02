@@ -21,7 +21,7 @@ export default function App() {
             <Routes>
               <Route path="/handler/*" element={<HandlerRoutes />} />
  //             <Route path="/" element={<div>hello world</div>} />
-                <Route path="/" element={<SignIn/>} />
+                <Route path="/" element={<SignIn />} />
           
             </Routes>
           </StackTheme>
