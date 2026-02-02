@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "npm install && tsc -b && vite build",
     "format": "prettier -c . --log-level warn",
     "format:fix": "prettier -w . --log-level warn",
     "lint:ts": "tsc --noEmit",
