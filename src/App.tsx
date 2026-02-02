@@ -25,7 +25,7 @@ export default function App() {
               <div>
                 <SignIn
                   fullPage={true}
-                  automaticRedirect={true}
+                  automaticRedirect={false}
                   firstTab='magic-link'
                 />
                 <OAuthButton provider="google" type="sign-in" />
