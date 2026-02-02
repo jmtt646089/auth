@@ -1,5 +1,6 @@
 import { StackHandler, StackProvider, StackTheme } from "@stackframe/react";
 import { SignIn } from "@stackframe/stack";
+import { OAuthButton } from '@stackframe/stack';
 import { Suspense } from "react";
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import { stackClientApp } from "./stack/client";
@@ -20,8 +21,17 @@ export default function App() {
           <StackTheme>
             <Routes>
               <Route path="/handler/*" element={<HandlerRoutes />} />
- //             <Route path="/" element={<div>hello world</div>} />
-                <Route path="/" element={<SignIn />} />
+              <Route path="/" element={
+              <div>
+                <SignIn
+                  fullPage={true}
+                  automaticRedirect={true}
+                  firstTab='magic-link'
+                />
+                <OAuthButton provider="google" type="sign-in" />
+                <OAuthButton provider="github" type="sign-up" />
+              </div>
+              } />
           
             </Routes>
           </StackTheme>
