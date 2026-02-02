@@ -1,12 +1,11 @@
-import { StackHandler, StackProvider, StackTheme } from '@stackframe/react';
-import { Suspense } from 'react';
-import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
-import { stackClientApp } from './stack';
-import Home from './Home';
+import { StackHandler, StackProvider, StackTheme } from "@stackframe/react";
+import { Suspense } from "react";
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
+import { stackClientApp } from "./stack/client";
 
 function HandlerRoutes() {
   const location = useLocation();
-
+  
   return (
     <StackHandler app={stackClientApp} location={location.pathname} fullPage />
   );
@@ -14,13 +13,13 @@ function HandlerRoutes() {
 
 export default function App() {
   return (
-    <Suspense fallback={null}>
+    <Suspense fallback={"Loading..."}>
       <BrowserRouter>
         <StackProvider app={stackClientApp}>
           <StackTheme>
             <Routes>
               <Route path="/handler/*" element={<HandlerRoutes />} />
-              <Route path="/" element={<Home />} />
+              <Route path="/" element={<div>hello world</div>} />
             </Routes>
           </StackTheme>
         </StackProvider>
